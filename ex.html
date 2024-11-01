@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orbiting Icons Example</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            height: 800px;
+            width: 600px;
+            max-width: 60rem;
+            overflow: hidden;
+            border-radius: 1rem;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            color: transparent;
+            background: linear-gradient(to bottom, black, gray);
+            -webkit-background-clip: text;
+            background-clip: text;
+            z-index: 3;
+        }
+
+        .orbiting-circles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+        }
+
+        .large-orbit, .small-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px solid lightgrey;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="text">Corparenza</span>
+        <div class="orbiting-circles">
+            <div class="large-orbit" id="largeOrbit"></div>
+            <div class="small-orbit" id="smallOrbit"></div>
+
+            <!-- Icons for the large orbit -->
+            <div class="circle" id="circle1">
+                <img src="creativity.png" alt="Image 1" />
+            </div>
+            <div class="circle" id="circle2">
+                <img src="rocket (1).png" alt="Image 2" />
+            </div>
+
+            <!-- Icons for the small orbit -->
+            <div class="circle" id="circle3">
+                <img src="rocket.png" alt="Image 3" />
+            </div>
+            <div class="circle" id="circle4">
+                <img src="creativity.png" alt="Image 4" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+       const circles = document.querySelectorAll('.circle');
+const largeOrbit = document.getElementById('largeOrbit');
+const smallOrbit = document.getElementById('smallOrbit');
+
+let largeOrbitRadius, smallOrbitRadius;
+const speed = 0.01;  // Adjust this value to control speed
+
+let angle1 = 0;
+let angle2 = Math.PI;
+let angle3 = 0;
+let angle4 = Math.PI;
+
+function setOrbitRadius() {
+    const viewportWidth = window.innerWidth;
+
+    if (viewportWidth <= 768) { // Mobile view
+        largeOrbitRadius = 350 / 2; // Half of 350px
+        smallOrbitRadius = 170 / 2; // Half of 170px
+
+        // Update CSS dimensions for mobile
+        largeOrbit.style.width = `350px`;
+        largeOrbit.style.height = `350px`;
+        smallOrbit.style.width = `170px`;
+        smallOrbit.style.height = `170px`;
+    } else { // Desktop view
+        largeOrbitRadius = 500 / 2; // Half of 500px
+        smallOrbitRadius = 250 / 2; // Half of 250px
+
+        // Update CSS dimensions for desktop
+        largeOrbit.style.width = `500px`;
+        largeOrbit.style.height = `500px`;
+        smallOrbit.style.width = `250px`;
+        smallOrbit.style.height = `250px`;
+    }
+}
+
+function animate() {
+    // Increase angles for the large orbit (clockwise)
+    angle1 += speed;
+    angle2 += speed;
+
+    // Decrease angles for the small orbit (counterclockwise)
+    angle3 -= speed;
+    angle4 -= speed;
+
+    // Calculate positions for circles in the large orbit
+    const x1 = largeOrbitRadius * Math.cos(angle1);
+    const y1 = largeOrbitRadius * Math.sin(angle1);
+    const x2 = largeOrbitRadius * Math.cos(angle2);
+    const y2 = largeOrbitRadius * Math.sin(angle2);
+
+    circles[0].style.transform = `translate(-50%, -50%) translate(${x1}px, ${y1}px)`;
+    circles[1].style.transform = `translate(-50%, -50%) translate(${x2}px, ${y2}px)`;
+
+    // Calculate positions for circles in the small orbit
+    const x3 = smallOrbitRadius * Math.cos(angle3);
+    const y3 = smallOrbitRadius * Math.sin(angle3);
+    const x4 = smallOrbitRadius * Math.cos(angle4);
+    const y4 = smallOrbitRadius * Math.sin(angle4);
+
+    circles[2].style.transform = `translate(-50%, -50%) translate(${x3}px, ${y3}px)`;
+    circles[3].style.transform = `translate(-50%, -50%) translate(${x4}px, ${y4}px)`;
+
+    requestAnimationFrame(animate);
+}
+
+// Update orbit radius on load and resize
+setOrbitRadius();
+window.addEventListener('resize', setOrbitRadius);
+
+animate();
+
+    </script>
+</body>
+</html>
