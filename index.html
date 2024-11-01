@@ -409,12 +409,12 @@ function setOrbitRadius() {
 
 function animate() {
     // Increase angles for the large orbit (clockwise)
-    angle1 += speed;
-    angle2 += speed;
+    angle1 -= speed;
+    angle2 -= speed;
 
     // Decrease angles for the small orbit (counterclockwise)
-    angle3 -= speed;
-    angle4 -= speed;
+    angle3 += speed;
+    angle4 += speed;
 
     // Calculate positions for circles in the large orbit
     const x1 = largeOrbitRadius * Math.cos(angle1);
