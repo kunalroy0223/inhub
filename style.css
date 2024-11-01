@@ -11,7 +11,7 @@ body{
 }
 nav{
   background-color:#00012b ;
-  box-shadow: 3px 3px 5px lightgrey;
+  box-shadow: 3px 3px 5px grey;
   position: sticky;
   top: 0;
   z-index: 5;
