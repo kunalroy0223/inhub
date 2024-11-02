@@ -11,7 +11,7 @@ body{
 }
 nav{
   background-color:#00012b ;
-  box-shadow: 3px 3px 5px grey;
+  box-shadow: 3px 3px 5px lightgrey;
   position: sticky;
   top: 0;
   z-index: 5;
@@ -110,7 +110,7 @@ nav li:first-child{
 
 }
 
-svg{
+nav svg{
   filter: brightness(0) invert();
 }
 
@@ -169,7 +169,7 @@ svg{
 }
 .basic{
   background-color: #f7f7f7; 
-  height: 800px;
+  height: 876px;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -178,7 +178,7 @@ svg{
 }
 .ci {
   position: absolute;
-  top: 50%; 
+  top: 63%; 
   left: 50%;
   transform: translate(-50%, -50%); /* Center content absolutely without affecting other elements */
   text-align: center;
@@ -186,31 +186,31 @@ svg{
 }
 
 .title-1{
-  font-size: 60px;
+  font-size: 90px;
   margin: 0;
   text-transform: uppercase;
   font-family: "Luckiest Guy", cursive;
     font-weight: 700;
       color: #f7f7f7; /* Light Gray */
     text-shadow: 
-        1px 1px 1px black, /* Light Blue */
-        1px 2px 1px black,
-        1px 3px 1px black,
-        1px 4px 1px black,
-        1px 5px 1px black,
-        1px 6px 1px black,
-        1px 7px 1px black,
-        1px 8px 1px black,
-        1px 9px 1px black,
-        1px 10px 1px black,
-        1px 18px 6px lightgrey, /* Dodger Blue for stronger contrast */
-        1px 22px 10px lightgrey,
-        1px 25px 35px lightgrey,
-        1px 30px 60px lightgrey; 
+        1px 1px 1px #00d2ff, /* Light Blue */
+        1px 2px 1px #00d2ff,
+        1px 3px 1px #00d2ff,
+        1px 4px 1px #00d2ff,
+        1px 5px 1px #00d2ff,
+        1px 6px 1px #00d2ff,
+        1px 7px 1px #00d2ff,
+        1px 8px 1px #00d2ff,
+        1px 9px 1px #00d2ff,
+        1px 10px 1px #00d2ff,
+        1px 18px 6px black, 
+        1px 22px 10px black,
+        1px 25px 35px black,
+        1px 30px 60px black; 
 }
 .title-1::after{
   content: "Corparenza";
-  font-size: 60px;
+  font-size: 90px;
   text-transform: uppercase;
   font-family: "Luckiest Guy", cursive;
   position: absolute;
@@ -235,7 +235,7 @@ svg{
   font-family: "Luckiest Guy", cursive;
   font-weight: 700;
   padding: 0;
-      color: black; 
+      color: #f7f7f7; 
     /*text-shadow: 
         1px 1px 1px black, 
         1px 2px 1px black,
@@ -301,13 +301,13 @@ svg{
 
 @media (max-width: 768px) {
   .title-1 {
-    font-size: 105px;
+    font-size: 85px;
   }
   .subtitle {
-    font-size: 60px;
+    font-size: 40px;
   }
   .title-1::after {
-    font-size: 105px; /* Font size for mobile screens */
+    font-size: 85px; /* Font size for mobile screens */
   }
     .basic {
     height: 600px; /* Height for mobile screens */
@@ -315,23 +315,24 @@ svg{
   .ci{
     top: 35%;
   }
+  
 }
 
 @media (max-width: 480px) {
   .title-1 {
-    font-size: 50px;
+    font-size: 45px;
   }
   .subtitle {
-    font-size: 35px;
+    font-size: 30px;
   }
    .title-1::after {
-    font-size: 50px; /* Font size for mobile screens */
+    font-size: 45px; /* Font size for mobile screens */
   }
    .basic {
     height: 600px; /* Height for mobile screens */
   }
   .ci{
-    top: 35%;
+    top: 32%;
   }
   .sidebar{
     width: 250px;
@@ -349,9 +350,9 @@ svg{
   text-decoration: none;
   font-size: 25px;
   color: white;
- background: #00012b;
+ background: #000dff;
   transition: 1s;
-  box-shadow: 6px 6px 0 #3a7bd5 ;
+  box-shadow: 6px 6px 0 #00d2ff ;
   transform: skewX(-15deg);
   border: none;
   cursor: pointer;
@@ -375,6 +376,14 @@ svg{
         font-size: 18px; /* Further reduce font size */
         padding: 8px 20px; /* Adjust padding for very small screens */
     }
+    .sphere{
+      height: 105em !important;
+    }
+   .sphere-animation{
+    top: -30%;
+        left: -23%;
+        position: absolute;
+   }
 }
 .cta:focus {
   outline: none;
@@ -472,7 +481,7 @@ svg{
         .orbiting-circles {
           z-index: -1;
             position: absolute;
-            top: 50%;
+            top: 63%;
             left: 50%;
             width: 100%;
             height: 100%;
@@ -485,7 +494,7 @@ svg{
             left: 50%;
             width: 500px; /* Size of the large orbit */
             height: 500px; /* Size of the large orbit */
-            border: 0.5px dashed #808080; /* Style for the large orbit */
+            border: none; /* Style for the large orbit */
             border-radius: 50%; /* Make it circular */
             transform: translate(-50%, -50%);
             z-index: 1; /* Ensure it's below the smaller circles */
@@ -497,7 +506,7 @@ svg{
             left: 50%;
             width: 250px; /* Size of the small orbit */
             height: 250px; /* Size of the small orbit */
-            border: 0.5px dashed #808080; /* Style for the small orbit */
+            border: none; /* Style for the small orbit */
             border-radius: 50%; /* Make it circular */
             transform: translate(-50%, -50%);
             z-index: 1; /* Ensure it's below the smaller circles */
@@ -693,9 +702,21 @@ footer {
 .address {
     margin-top: 30px;
     font-size: 14px;
-    color: white;
+     color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    }
+.address img, .quick-links img {
+    height: 24px;
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
 }
 
+.quick-links a:hover img, .address a:hover img {
+    filter: brightness(0) saturate(100%) invert(49%) sepia(100%) saturate(500%) hue-rotate(170deg) brightness(0.95);
+}
 .title {
     font-size: 24px;
     font-weight: bold;
@@ -712,11 +733,16 @@ footer {
 }
 
 .quick-links ul li a {
+     color: white;
     text-decoration: none;
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     transition: color 0.2s ease;
 }
-
+.quick-links img{
+  filter: brightness(0) invert(1);
+}
 .quick-links ul li a:hover {
     color: #00d2ff;
 }
@@ -907,7 +933,6 @@ ul.schedule li .descr::before {
   border-radius: 50%;
   filter: blur(4px);
   transform: translate(-50%, 50%);
- box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
 }
 ul.schedule li .title::before {
   bottom: calc(100% + 0.125rem);
@@ -951,3 +976,47 @@ ul.schedule li .descr::before {
   }
 }
 
+        .globe {
+            margin: 0;
+            padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+}
+
+.animation-wrapper {
+  width: 50%;
+  padding-bottom: 50%;
+}
+.sphere{
+  height: 55em;
+}
+.sphere-animation {
+ padding-top: 50em;
+ padding-left: 16em;
+  width: 580px;
+  height: 580px;
+  margin: -290px 0 0 -290px;
+}
+
+.sphere path {
+  fill: url(#sphereGradient);
+  stroke-width: 1px;
+  stroke: rgba(80,80,80,.35);
+  backface-visibility: hidden;
+}
+
+@media (min-width: 500px) {
+  .sphere path {
+    stroke-width: .4px;
+  }
+}
+.globe{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
