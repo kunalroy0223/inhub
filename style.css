@@ -878,8 +878,7 @@ ul.schedule li .title,
 ulschedule li .descr {
   background: var(--bgColor);
   position: relative;
-  padding-inline: none;
- box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
+  padding-inline: 3rem;
 }
 ul.schedule li .title {
   overflow: hidden;
@@ -894,7 +893,6 @@ ul.schedule li .descr {
   font-weight: 300;
   text-align:justify;
   font-size:14px;
- box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* shadows */
@@ -909,6 +907,7 @@ ul.schedule li .descr::before {
   border-radius: 50%;
   filter: blur(4px);
   transform: translate(-50%, 50%);
+ box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
 }
 ul.schedule li .title::before {
   bottom: calc(100% + 0.125rem);
