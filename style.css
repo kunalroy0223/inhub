@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
-svg {
-filter: hue-rotate(180deg) saturate(200%);}
+
 *{
   margin: 0;
   padding: 0;
@@ -996,6 +995,8 @@ ul.schedule li .descr::before {
 }
 .sphere{
   height: 55em;
+filter:hue rotate(180deg) saturate(25);
+opacity:0.8;
 }
 .sphere-animation {
  padding-top: 50em;
