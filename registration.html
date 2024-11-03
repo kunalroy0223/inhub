@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="inhub.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <title>Registration</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="registration.css">
 </head>
 <body>
   <nav>
@@ -27,8 +27,99 @@
       <li class="menu-button" onclick=showSidebar()><a href="#"><svg class="no-hover" xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
     </ul>
   </nav>
+<section class="reg">
+   <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
 
-<h1 style="font-size: 60px;"> Under Development hai bhai badmein aana</h1>
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>Do you have a team? </h3>
+            <p>
+            Click on the button below to Register as a team.
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>Are you an Individual?</h3>
+            <p>
+               Click on the button below to Register as an Individual.
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+</section>
   <footer>
     <div class="grid-container">
         <div class="footer-container">
@@ -40,7 +131,7 @@
             </div>
 
             <div class="foot-container quick-links">
-                <div class="title">Quick Links</div>
+                <div class="f-title">Quick Links</div>
                 <ul>
                     <li><a href="#particle-js"><img src="right.png" alt="arrow" height="15px">Home</a></li>
                     <li><a href="https://inspiria.edu.in/inhub/"><img src="right.png" alt="arrow" height="15px">About Us</a></li>
@@ -50,7 +141,7 @@
                 </ul>
             </div>
             <div class="foot-container social-links">
-                <div class="title">Contact Us</div>
+                <div class="f-title">Contact Us</div>
                 <div class="contact">
                     <a href="mailto:ecell@inspiria.edu.in"><img src="email.png" alt="email-icon" height="30px">ecell@inspiria.edu.in </a>
                     <a href="tel:+91904600781"><img src="phone.png" alt="phone-icon" height="30px"> +91 904600781</a>
@@ -79,6 +170,19 @@
       sidebar.style.display = 'none'
     }
 
+</script>
+<script>
+  const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container");
+
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
+});
+
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
+});
 </script>
 </body>
 </html>
