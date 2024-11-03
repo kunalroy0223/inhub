@@ -710,7 +710,7 @@ footer {
     gap: 10px;
     }
 .address img, .quick-links img {
-    height: 24px;
+    height: 16px;
     transition: filter 0.3s ease;
     filter: brightness(0) invert(1);
 }
